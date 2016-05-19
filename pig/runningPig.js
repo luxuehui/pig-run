@@ -11,7 +11,7 @@ const pigWidth     =  124,
       pigHeight    =  144,
       groundWidth  =  1246,
       groundHeight =  133,
-      baseMoney    =  11,
+      baseMoney    =  12,
       hitX         =  pigWidth/2,
       hitY         =  5;
 
