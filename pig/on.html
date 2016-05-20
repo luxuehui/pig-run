@@ -30,11 +30,12 @@
         }
         .con1 .ercode{
             background: #ffffff;
-            height:562px;
-            width:562px;
+            height:502px;
+            width:502px;
             margin-top:  240px;
             margin-left: 240px;
             float: left;
+            padding: 30px;
         }
         .container{
             height: 1103px;
@@ -61,6 +62,7 @@
             color: #FFFFFF;
             font-size: 40px;
             text-shadow: 2px 2px 2px #333333;
+            position: relative;
         }
         .con1 .go{
             width: 187px;
@@ -128,20 +130,74 @@
             text-shadow: 3px 3px 4px #000000;
             color: #ffffff;
         }
+        .ercode .ready{
+            width: 100%;
+            height: 100%;
+            background: #b1eaff;
+        }
+        .ercode .ready-text{
+            text-align: center;
+            color: #0093d7;
+            font-size: 70px;
+            padding-top: 128px;
+        }
+        .progress{
+            width: 316px;
+            height:23px;
+            margin-top: 80px;
+            margin-left: 97px;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-con{
+            background: url("img/1/pro.png") no-repeat;
+            width: 316px;
+            height:23px;
+            border-radius: 15px;
+            position: absolute;
+            top: 0;
+            left: -316px;
+        }
+        .user-in{
+            position: absolute;
+            width: 63px;
+            height: 64px;
+            top: 16px;
+            right: 40px;
+            display: block;
+            background: url("img/1/yes.png");
+        }
+        .loading{
+            text-align: center;
+            color: #ffffff;
+            margin-top: 20px;
+        }
     </style>
 </head>
-<body onload="preload()">
+<body>
+<!--<body onload="preload()">-->
     <!--开始页面-->
     <section class="con1-bg fn-hide">
         <div class="container con1">
             <div class="go">
-                10
             </div>
             <div class="ercode">
+                <div class="ready">
+                    <p class="ready-text">
+                        进入游戏
+                    </p>
+                    <div class="progress">
+                        <div class="progress-con "></div>
+                    </div>
+                    <p class="loading">loading...</p>
+                </div>
             </div>
             <div class="name-list">
                 <div class="name">
                     hihi
+                    <i class="user-in"></i>
                 </div>
                 <div class="name">
                     hihi
@@ -201,16 +257,20 @@
     <script src="SimpleButton.js"></script>
     <script src="Preloader.js"></script>
     <script src="runningPig.js"></script>
-    <!--<script src="runningPig-on.js"></script>-->
+    <script src="runningPig-on.js"></script>
     <script>
 
-        $('.con2-bg').removeClass('fn-hide');
+        $('.con1-bg').removeClass('fn-hide');
         const height = 1103;
         const width = 1600;
         var winW = $(window).width(),
             winH = $(window).height(),
             scale = winW > winH ? (winH/height) : (winW/width);
         $('.container').css('transform','scale('+scale+')');
+
+//       进度
+        $('.progress-con').animate({"left":'0'},3000);
+
     </script>
 </body>
 </html>

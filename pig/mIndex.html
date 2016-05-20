@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .m-bg{
+            width: 100%;
+            height: 100%;
+            background: url("img/m/bg.png") no-repeat center center;
+            background-size: cover;
+        }
+        .m-con1{
+            position: absolute;
+            top: 50%;
+            left:50%;
+            width: 540px;
+            height: 413px;
+            margin-left: -270px;
+            margin-top: -206px;
+            background: url("img/m/access.png") no-repeat;
+            background-size: 100%;
+        }
+        .m-con1-text{
+            width: 390px;
+            height: 95px;
+            line-height: 95px;
+            text-align: center;
+            border:none;
+            margin-top: 89px;
+            margin-left: 70px;
+            background: none;
+            font-size: 30px;
+            color: #ffb374;
+        }
+        .m-con1-btn{
+            width: 387px;
+            height: 77px;
+            line-height: 77px;
+            background: url("img/m/btn.png") no-repeat;
+            background-size: 100%;
+            border:none;
+            margin-top: 40px;
+            font-size: 30px;
+            color: #ffffff;
+            text-shadow: 1px 1px 1px #333;
+            margin-left: 70px;
+        }
+        .fn-hide{
+            display: none!important;
+        }
+        .m-con2{
+            width: 540px;
+            height: 540px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -270px;
+            margin-left: -270px;
+            color: #ffffff;
+        }
+        .m-ready{
+            font-size: 80px;
+            line-height: 200px;
+            text-shadow: 1px 1px 1px #333;
+            margin-left: 100px;
+        }
+        .m-onIN{
+            text-align: center;
+            font-size: 28px;
+        }
+        .m-con3{
+            text-align: center;
+        }
+        .ercode .ready-text{
+            text-align: center;
+            color: #0093d7;
+            font-size: 70px;
+            padding-top: 128px;
+        }
+        .progress{
+            width: 316px;
+            height:23px;
+            margin-top: 80px;
+            margin-left: 97px;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-con{
+            background: url("img/1/pro.png") no-repeat;
+            width: 316px;
+            height:23px;
+            border-radius: 15px;
+            position: absolute;
+            top: 0;
+            left: -316px;
+        }
+        .loading{
+            text-align: center;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+        .m-con3{
+            height: 640px;
+            width: 640px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -320px;
+            margin-top: -320px;
+            background: url("img/m/yaobg.png") no-repeat center center;
+            background-size: 553px 553px;
+        }
+        .m-yao{
+            margin-top: 100px;
+            margin-left: 30px;
+        }
+        @-webkit-keyframes swing {
+            20% {
+                -webkit-transform: rotate3d(0,0,1,30deg);
+                transform: rotate3d(0,0,1,30deg)
+            }
+
+            40% {
+                -webkit-transform: rotate3d(0,0,1,-10deg);
+                transform: rotate3d(0,0,1,-10deg)
+            }
+
+            60% {
+                -webkit-transform: rotate3d(0,0,1,5deg);
+                transform: rotate3d(0,0,1,5deg)
+            }
+
+            80% {
+                -webkit-transform: rotate3d(0,0,1,-5deg);
+                transform: rotate3d(0,0,1,-5deg)
+            }
+
+            100% {
+                -webkit-transform: rotate3d(0,0,1,0deg);
+                transform: rotate3d(0,0,1,0deg)
+            }
+        }
+
+        @keyframes swing {
+            20% {
+                -webkit-transform: rotate3d(0,0,1,30deg);
+                transform: rotate3d(0,0,1,30deg)
+            }
+
+            40% {
+                -webkit-transform: rotate3d(0,0,1,-10deg);
+                transform: rotate3d(0,0,1,-10deg)
+            }
+
+            60% {
+                -webkit-transform: rotate3d(0,0,1,5deg);
+                transform: rotate3d(0,0,1,5deg)
+            }
+
+            80% {
+                -webkit-transform: rotate3d(0,0,1,-5deg);
+                transform: rotate3d(0,0,1,-5deg)
+            }
+
+            100% {
+                -webkit-transform: rotate3d(0,0,1,0deg);
+                transform: rotate3d(0,0,1,0deg)
+            }
+        }
+
+        .swing {
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            -webkit-animation-name: swing;
+            animation-name: swing;
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+        }
+        .animated {
+            -webkit-animation-duration: .8s;
+            animation-duration: .8s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both
+        }
+        .m-con4{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background: rgba(0,0,0,0.5);
+        }
+        .m-con4-dia{
+            height: 465px;
+            width: 540px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -270px;
+            margin-top: -232px;
+            background: url("img/m/link.png");
+        }
+        .ma-list{
+            margin-top: 147px;
+            margin-left: 200px;
+            margin-right: 70px;
+        }
+        .ma-list .m-item{
+            height: 68px;
+            line-height: 68px;
+            text-align: center;
+            margin-bottom: 14px;
+            font-size: 40px;
+            text-shadow: 3px 3px 4px #000000;
+            color: #ffffff;
+        }
+
+
+        @-webkit-keyframes tada {
+            0% {
+                -webkit-transform: scale3d(1,1,1);
+                transform: scale3d(1,1,1)
+            }
+
+            10%,20% {
+                -webkit-transform: scale3d(.9,.9,.9) rotate3d(0,0,1,-6deg);
+                transform: scale3d(.9,.9,.9) rotate3d(0,0,1,-6deg)
+            }
+
+            30%,50%,70%,90% {
+                -webkit-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,6deg);
+                transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,6deg)
+            }
+
+            40%,60%,80% {
+                -webkit-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-6deg);
+                transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-6deg)
+            }
+
+            100% {
+                -webkit-transform: scale3d(1,1,1);
+                transform: scale3d(1,1,1)
+            }
+        }
+
+        @keyframes tada {
+            0% {
+                -webkit-transform: scale3d(1,1,1);
+                transform: scale3d(1,1,1)
+            }
+
+            10%,20% {
+                -webkit-transform: scale3d(.9,.9,.9) rotate3d(0,0,1,-6deg);
+                transform: scale3d(.9,.9,.9) rotate3d(0,0,1,-6deg)
+            }
+
+            30%,50%,70%,90% {
+                -webkit-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,6deg);
+                transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,6deg)
+            }
+
+            40%,60%,80% {
+                -webkit-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-6deg);
+                transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-6deg)
+            }
+
+            100% {
+                -webkit-transform: scale3d(1,1,1);
+                transform: scale3d(1,1,1)
+            }
+        }
+
+        .tada {
+            -webkit-animation-name: tada;
+            animation-name: tada;
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+<section class="m-bg">
+    <!--入口-->
+    <div class="m-con1 fn-hide">
+        <input type="text" class="m-con1-text" value="哈啊" />
+        <input class="m-con1-btn" type="submit" value="进入房间" />
+    </div>
+    <!--准备-->
+    <div class="m-con2 fn-hide">
+        <p class="m-ready">Ready<span id="m-dot">.</span></p>
+        <p class="m-onIN">
+            正在等待其他玩家进入
+        </p>
+    </div>
+    <!--准备2  有进度条的-->
+    <div class="m-con2 fn-hide">
+        <div class="ercode">
+            <div class="ready">
+                <p class="ready-text">
+                    进入游戏
+                </p>
+                <div class="progress">
+                    <div class="progress-con "></div>
+                </div>
+                <p class="loading">loading...</p>
+            </div>
+        </div>
+    </div>
+    <!--赶快摇一摇-->
+    <div class="m-con3">
+        <div>
+            <img src="img/m/yaotext.png" alt="">
+        </div>
+        <div>
+            <img src="img/m/yao.png" class="m-yao" width="205" alt="">
+        </div>
+    </div>
+
+    <!--排名-->
+    <div class="m-con4 fn-hide">
+        <div class="m-con4-dia">
+            <div class="ma-list">
+                <div class="m-item">
+                    hihi
+                </div>
+                <div class="m-item">
+                    hihi
+                </div>
+                <div class="m-item">
+                    hihi
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="lib/jquery.min.js"></script>
+
+<script src="lib/easeljs-0.7.1.min.js"></script>
+<script src="lib/preloadjs-0.4.1.min.js"></script>
+<script src="lib/tweenjs-0.5.1.min.js"></script>
+<script src="lib/soundjs-0.5.2.min.js"></script>
+<script src="Runner.js"></script>
+<script src="SimpleButton.js"></script>
+<script src="Preloader.js"></script>
+<script src="runningPig.js"></script>
+<!--<script src="runningPig-on.js"></script>-->
+<script>
+
+    //控制meta
+    var phoneScale = 1;
+    var isan = (/Android (\d+\.\d+)/.test(navigator.userAgent));
+    if (isan) {
+        var version = parseFloat(RegExp.$1);
+        if (version > 2.3) {
+            phoneScale = parseInt(window.screen.width) / 640;
+            document.write('<meta name="viewport" content="width=640, initial-scale=' + phoneScale + ', minimum-scale=' + phoneScale + ', maximum-scale=' + phoneScale + ',user-scalable=no ,target-densitydpi=device-dpi">');
+        } else {
+            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+        }
+    } else {
+        phoneScale = parseInt(window.screen.width) / 640;
+        document.write('<meta name="viewport" content="width=device-width, initial-scale=' + phoneScale + ', minimum-scale=' + phoneScale + ', maximum-scale=' + phoneScale + ', user-scalable=no">');
+    }
+    //点点的运动
+    var $dot =  $('#m-dot'),
+        $dotHtml = $dot.html(),
+        flag = true;
+    setInterval(function(){
+        if(flag){
+            if($dot.html() == '..'){
+                $dot.html('...');
+                flag = false;
+            } else if($dot.html() == '.'){
+                $dot.html('..');
+            } else if ($dot.html() == ''){
+                $dot.html('.');
+            }
+        } else{
+            if($dot.html() == '...'){
+                $dot.html('..');
+            } else if($dot.html() == '..'){
+                $dot.html('.');
+            } else if($dot.html() == '.'){
+                $dot.html('');
+                flag = true;
+            }
+        }
+    },500);
+    //       进度
+    $('.progress-con').animate({"left":'0'},3000);
+    //    摇一摇
+    $('.m-yao').addClass('tada animated')
+</script>
+</body>
+</html>
