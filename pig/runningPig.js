@@ -13,7 +13,7 @@ const pigWidth     =  124,
       groundHeight =  133,
       baseMoney    =  12,
       hitX         =  pigWidth/2,
-      hitY         =  5;
+      hitY         =  3;
 
 function preload() {
     queue = new createjs.LoadQueue();
@@ -54,9 +54,11 @@ function onTick() {
             }
             target[i].on('animationend', function (e) {
                 this.stop();
+                stage.removeChild(this);
             });
         }
     }
+
 }
 function initGame() {
     createjs.Ticker.on('tick', onTick);
@@ -91,7 +93,7 @@ function buildRunner() {
     for (var i =0;i<baseMoney;i++){
         target[i] =  stage.addChild(new createjs.Sprite(goldSheet,'idle'));
         target[i].x = 130+i*86;
-        target[i].y = 10+Math.random()*30;
+        target[i].y = 10+Math.random()*25;
     }
     //ground
     ground =  stage.addChild(new createjs.Shape());

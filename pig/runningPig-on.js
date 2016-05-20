@@ -53,10 +53,13 @@
             _this.queue.load();
         },
         initGame:function () {
-            createjs.Ticker.on('tick', this.onTick);
+            debugger;
             var _this = this;
             _this.stage.removeChild(_this.preloader);
             _this.preloader = null;
+            var onTick = new createjs.proxy(this.onTick, this);
+            createjs.Ticker.on('tick', onTick);
+
             _this.spritesheet = new createjs.SpriteSheet({
                 "images":[_this.queue.getResult('runner')],
                 "frames":{"regX":0, "height":_this.pigHeight, "count":10, "regY":0, "width":_this.pigWidth},
@@ -73,14 +76,13 @@
             this.preloader.update(e.progress);
         },
         onTick:function () {
-            debugger;
             var _this = this;
-            for (var i =0;i<11;i++){
-                var pt = _this.runner.localToLocal(_this.hitX,_this.hitY, _this.target[i]);
-                if ( _this.target[i].hitTest(pt.x, pt.y)){
-                    _this.target[i].alpha = 0;
-                }
-            }
+            // for (var i =0;i<11;i++){
+            //     var pt = _this.runner.localToLocal(_this.hitX,_this.hitY, _this.target[i]);
+            //     if ( _this.target[i].hitTest(pt.x, pt.y)){
+            //         _this.target[i].alpha = 0;
+            //     }
+            // }
         },
         buildRunner:function () {
             this.runner = new sprites.Runner(this.spritesheet);
