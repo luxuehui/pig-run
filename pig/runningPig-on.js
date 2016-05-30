@@ -5,12 +5,12 @@ var Pig = function (opt){
     
     this.opt = $.extend(def,opt);
 
-    this.pigWidth     =  124,
-    this.pigHeight    =  144,
-    this.groundWidth  =  1246,
-    this.groundHeight =  133,
-    this.baseMoney    =  12,
-    this.hitX         =  pigWidth/2,
+    this.pigWidth     =  124;
+    this.pigHeight    =  144;
+    this.groundWidth  =  1246;
+    this.groundHeight =  133;
+    this.baseMoney    =  12;
+    this.hitX         =  pigWidth/2;
     this.hitY         =  3;
     this.target=[];
     this.init();
